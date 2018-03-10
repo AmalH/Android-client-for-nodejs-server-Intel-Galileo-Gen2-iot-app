@@ -45,7 +45,7 @@ public class MainActivity extends AppCompatActivity  {
                 url, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
-                Log.e("Call Passed:", response.toString());
+                Log.d("Call Passed:", response.toString());
             }
         }, new Response.ErrorListener() {
             @Override
