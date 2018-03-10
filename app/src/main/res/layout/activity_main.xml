@@ -1,66 +1,42 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:orientation="vertical"
-    android:padding="30dp"
+    android:padding="20dp"
     android:layout_height="match_parent"
-    tools:context="ous.esprit.tn.iot.MainActivity">
+    android:gravity="center_horizontal"
+    tools:context="ous.esprit.tn.main.MainActivity">
 
-    <LinearLayout
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-        android:orientation="horizontal">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Etat :"
-            android:textSize="25dp"
-            android:textColor="#000000"/>
-
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="30dp"
-            android:text="Désactivé"
-            android:id="@+id/etat"
-            android:textColor="#ff0000"
-            android:textSize="28dp"/>
-
-
-    </LinearLayout>
-
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="You can call this an IoT app, yes!"
+        android:textSize="18dp"
+        android:layout_marginTop="50dp"
+        android:textStyle="bold"/>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:layout_marginTop="15dp">
-
+        android:layout_marginTop="50dp">
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Seuil :"
-            android:textColor="#000000"
-            android:textSize="25dp"/>
-
+            android:textStyle="bold"
+            android:text="Threshold:"/>
         <EditText
-            android:layout_width="171dp"
+            android:layout_width="170dp"
             android:layout_height="40dp"
             android:layout_marginLeft="10dp"
-            android:id="@+id/seuil"
-            />
-
+            android:id="@+id/seuil"/>
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="OK"
+            android:text="Send"
             android:id="@+id/ok_seuil"
             android:layout_marginLeft="10dp"/>
-
     </LinearLayout>
 
     <LinearLayout
@@ -68,28 +44,24 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:layout_marginTop="15dp">
-
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Valeur"
-            android:textColor="#000000"
-            android:textSize="25dp"/>
-
-        <EditText
-            android:layout_width="169dp"
+            android:textStyle="bold"
+            android:text="Max tmp value:"/>
+        <TextView
+            android:layout_width="138dp"
             android:layout_height="40dp"
             android:id="@+id/val"
-            android:layout_marginLeft="10dp"
-            />
-
+            android:text="still &lt; threshold"
+            android:layout_marginLeft="10dp"/>
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/refresh"
-            android:background="@drawable/ic_action_refresh"
+            android:text="Refresh"
+            android:textSize="9dp"
             android:layout_marginLeft="10dp"/>
-
     </LinearLayout>
 
 
@@ -98,27 +70,24 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:layout_marginTop="15dp">
-
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Msg :"
-            android:textColor="#000000"
-            android:textSize="25dp"/>
+            android:textStyle="bold"
+            android:text="Message :"/>
 
         <EditText
-            android:layout_width="159dp"
+            android:layout_width="150dp"
             android:layout_height="40dp"
             android:layout_marginLeft="10dp"
-            android:id="@+id/msg"
-            />
+            android:id="@+id/msg"/>
 
         <Button
+            android:id="@+id/send"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="send"
-            android:id="@+id/send"
-            android:layout_marginLeft="10dp"/>
+            android:layout_marginLeft="25dp"
+            android:text="send" />
 
     </LinearLayout>
 
@@ -126,26 +95,23 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:layout_marginTop="30dp"
-        android:layout_marginLeft="30dp">
+        android:layout_marginTop="30dp">
 
         <Switch
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Led"
-            android:id="@+id/led"
+            android:id="@+id/ledSwitch"
             android:textSize="20dp"
-
             android:checked="true"/>
 
         <Switch
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Buzzer"
-            android:id="@+id/buzz"
+            android:id="@+id/buzzerSwitch"
             android:textSize="20dp"
-            android:layout_marginLeft="80dp"
-            />
+            android:layout_marginLeft="80dp"/>
 
     </LinearLayout>
 

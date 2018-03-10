@@ -1,4 +1,4 @@
-package ous.esprit.tn.iot.utils;
+package ous.esprit.tn.utils;
 
 import android.content.Context;
 
