@@ -30,12 +30,12 @@
             android:layout_width="170dp"
             android:layout_height="40dp"
             android:layout_marginLeft="10dp"
-            android:id="@+id/seuil"/>
+            android:id="@+id/thresholdValue"/>
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Send"
-            android:id="@+id/ok_seuil"
+            android:id="@+id/sendThreshold"
             android:layout_marginLeft="10dp"/>
     </LinearLayout>
 
@@ -52,13 +52,13 @@
         <TextView
             android:layout_width="138dp"
             android:layout_height="40dp"
-            android:id="@+id/val"
+            android:id="@+id/maxTmpVal"
             android:text="still &lt; threshold"
             android:layout_marginLeft="10dp"/>
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/refresh"
+            android:id="@+id/refreshMaxTmp"
             android:text="Refresh"
             android:textSize="9dp"
             android:layout_marginLeft="10dp"/>
