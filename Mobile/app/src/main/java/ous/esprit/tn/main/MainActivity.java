@@ -49,16 +49,26 @@ public class MainActivity extends AppCompatActivity  {
             @Override
             public void onClick(View v) {
                 Log.d("TEST TEST",((EditText)(findViewById(R.id.thresholdValue))).getText().toString());
-                callMyApi("http://172.16.220.137:4300/updateSeuil?value="+((EditText)(findViewById(R.id.thresholdValue))).getText());
+                callMyApi("http://172.16.220.137:4300/updateSeuil?seuil="+((EditText)(findViewById(R.id.thresholdValue))).getText());
             }
         });
 
         /** reading maximum temperature **/
-        readMaxTmpValue();
+         readMaxTmpValue();
         ( findViewById(R.id.refreshMaxTmp)).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 readMaxTmpValue();
+            }
+        });
+
+        /** sending message to db **/
+        readMaxTmpValue();
+        ( findViewById(R.id.sendMsg)).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                callMyApi("http://172.16.220.137:4300/sendMessage?content="+"\""+((EditText)(findViewById(R.id.msgContent))).getText()+"\"");
+
             }
         });
     }
@@ -82,7 +92,7 @@ public class MainActivity extends AppCompatActivity  {
 
     private void readMaxTmpValue(){
         StringRequest strReq = new StringRequest(Request.Method.GET,
-                "http://172.16.220.137:4300//getSeuil", new Response.Listener<String>() {
+                "http://172.16.220.137:4300/getSeuil", new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
                 Log.d("Call Passed:", response.toString());

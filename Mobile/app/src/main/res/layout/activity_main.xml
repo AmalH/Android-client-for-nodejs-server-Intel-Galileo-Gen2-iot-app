@@ -77,13 +77,13 @@
             android:text="Message :"/>
 
         <EditText
+            android:id="@+id/msgContent"
             android:layout_width="150dp"
             android:layout_height="40dp"
-            android:layout_marginLeft="10dp"
-            android:id="@+id/msg"/>
+            android:layout_marginLeft="10dp"/>
 
         <Button
-            android:id="@+id/send"
+            android:id="@+id/sendMsg"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="25dp"
