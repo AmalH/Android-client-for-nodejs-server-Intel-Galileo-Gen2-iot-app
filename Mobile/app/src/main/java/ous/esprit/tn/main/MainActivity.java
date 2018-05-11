@@ -28,19 +28,13 @@ public class MainActivity extends AppCompatActivity  {
         ((Switch) findViewById(R.id.ledSwitch)).setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                if (isChecked)
-                    callMyApi("http://172.16.220.137:4300/updateSensor?status=1&sensor=led");
-                else
-                    callMyApi("http://172.16.220.137:4300/updateSensor?status=0&sensor=led");
+                    callMyApi("http://localhost:3000/setEtatLed");
             }
         });
         ((Switch) findViewById(R.id.buzzerSwitch)).setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                if (isChecked)
-                    callMyApi("http://172.16.220.137:4300/updateSensor?status=1&sensor=buzzer");
-                else
-                    callMyApi("http://172.16.220.137:4300/updateSensor?status=0&sensor=buzzer");
+                callMyApi("http://localhost:3000/setEtatLed");
             }
         });
 
@@ -49,7 +43,7 @@ public class MainActivity extends AppCompatActivity  {
             @Override
             public void onClick(View v) {
                 Log.d("TEST TEST",((EditText)(findViewById(R.id.thresholdValue))).getText().toString());
-                callMyApi("http://172.16.220.137:4300/updateSeuil?seuil="+((EditText)(findViewById(R.id.thresholdValue))).getText());
+                //callMyApi("http://172.16.220.137:4300/updateSeuil?seuil="+((EditText)(findViewById(R.id.thresholdValue))).getText());
             }
         });
 
@@ -67,7 +61,7 @@ public class MainActivity extends AppCompatActivity  {
         ( findViewById(R.id.sendMsg)).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                callMyApi("http://172.16.220.137:4300/sendMessage?content="+"\""+((EditText)(findViewById(R.id.msgContent))).getText()+"\"");
+                callMyApi("http://localhost:3000/setMessage?message="+"\""+((EditText)(findViewById(R.id.msgContent))).getText()+"\"");
 
             }
         });
@@ -92,7 +86,7 @@ public class MainActivity extends AppCompatActivity  {
 
     private void readMaxTmpValue(){
         StringRequest strReq = new StringRequest(Request.Method.GET,
-                "http://172.16.220.137:4300/getSeuil", new Response.Listener<String>() {
+                "http://localhost:3000/getTempSeuil", new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
                 Log.d("Call Passed:", response.toString());
